@@ -23,17 +23,14 @@ function Pokemon(nombre, color, poderDeAtaque){
 
 }
 
-function combate(){
+function combatir(){
 	var dato = document.getElementById("cajita");
 	var pokemon1 = document.getElementById("pokemon1").value;
 	var pokemon2 = document.getElementById("pokemon2").value;
 	var valorAtak = prompt("Ingres un valor de ataque");
 	var atak1 = new Pokemon(pokemon1, "color", valorAtak);
 	var atak2 = new Pokemon(pokemon2, "otro color", 5);
+
+	atak1.atacar(atak2);
+	dato.innerHTML = atak1.nombre + " atacó a " + atak2.nombre + " y " + atak2.nombre + " tiene una vida de: " + atak2.vida;
 }
-
-var Pikachu = new Pokemon("Pikachu", "Amarillo", 100);
-var Charmander = new Pokemon("Charmander", "Rojo", 20);
-
-Pikachu.atacar(Charmander);
-console.log(Charmander.vida);
